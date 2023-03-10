@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Short+Stack&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./index.js" defer></script>
+    <title>Jogo da Velha (tic-tac-toe)</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1 class="game-name">Tic-Tac-Toe</h1>
+        <div class="container-btn">
+          <button class="restart-game-btn">Reiniciar o Jogo</button>
+          <button class="change-name-btn">Trocar os nome</button>
+          <button class="theme-select" data-theme="dark"></button>
+        </div>
+      </header>
+      <div class="container-players">
+        <div class="container-player">
+          <label for="player-x">X</label>
+          <input
+            type="text"
+            name="player-x"
+            id="player-x"
+            placeholder="Nome do Jogador X"
+          />
+        </div>
+        <div class="container-player">
+          <label for="player-circle">O</label>
+          <input
+            type="text"
+            name="player-circle"
+            id="player-circle"
+            placeholder="Nome do Jogador O"
+          />
+        </div>
+        <button class="start-game-btn">Iniciar o Jogo</button>
+      </div>
+      <div class="game">
+        <p class="situation-game"><span id="turn-player"></span></p>
+        <div class="board">
+          <div id="cell-1" class="cells cursor-pointer" data-cell="1"></div>
+          <div id="cell-2" class="cells cursor-pointer" data-cell="2"></div>
+          <div id="cell-3" class="cells cursor-pointer" data-cell="3"></div>
+          <div id="cell-4" class="cells cursor-pointer" data-cell="4"></div>
+          <div id="cell-5" class="cells cursor-pointer" data-cell="5"></div>
+          <div id="cell-6" class="cells cursor-pointer" data-cell="6"></div>
+          <div id="cell-7" class="cells cursor-pointer" data-cell="7"></div>
+          <div id="cell-8" class="cells cursor-pointer" data-cell="8"></div>
+          <div id="cell-9" class="cells cursor-pointer" data-cell="9"></div>
+        </div>
+      </div>
+      <footer class="footer">
+        <p>
+          &copy; Projeto Desenvolvido por
+          <a href="https://github.com/aleretamero" target="_blank"
+            >Alexandre Retamero</a
+          >
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
