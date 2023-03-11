@@ -16,10 +16,18 @@
   padding: 0;
 }
 
+/* Utilidades */
+.cursor-pointer {
+  cursor: pointer;
+}
+.win {
+  background-color: green !important;
+}
+
 /* Geral */
 .container {
   width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -29,11 +37,11 @@
   font-family: var(--font-primary);
   transition: 0.4s;
 }
-.cursor-pointer {
-  cursor: pointer;
-}
-.win {
-  background-color: green !important;
+.container-main {
+  flex: 1 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Header */
