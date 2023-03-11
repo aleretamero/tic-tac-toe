@@ -1,0 +1,199 @@
+:root {
+  --color-primary: #212529;
+  --color-secundary: #f1f5f9;
+
+  --color-primary-strong: #000;
+  --color-secundary-strong: #fff;
+
+  --font-primary: 'Short Stack', cursive;
+  --font-secundary: 'Caveat', cursive;
+}
+
+/* Utilidades */
+.cursor-pointer {
+  cursor: pointer;
+}
+.win {
+  background-color: green !important;
+}
+
+/* Geral */
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-primary);
+  color: var(--color-secundary);
+  font-family: var(--font-primary);
+  transition: 0.4s;
+}
+.container-main {
+  flex: 1 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Header */
+.header {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+.container-btn {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  color: var(--color-primary);
+  border-radius: 30px;
+}
+.restart-game-btn,
+.change-name-btn {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  padding: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 1rem;
+  border-color: var(--color-secundary);
+  border-style: solid;
+  background-color: var(--color-primary);
+  color: var(--color-secundary);
+  transition: 0.4s;
+}
+.restart-game-btn:hover,
+.change-name-btn:hover {
+  border-color: var(--color-primary);
+  background-color: var(--color-secundary);
+  color: var(--color-primary);
+  transition: 0.4s;
+}
+.theme-select {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid var(--color-primary-strong);
+  background-color: var(--color-secundary-strong);
+  cursor: pointer;
+  border-color: var(--color-secundary);
+  transition: 0.4s;
+}
+.theme-select:hover {
+  border-color: var(--color-secundary-strong);
+  background-color: var(--color-secundary);
+}
+
+.game-name {
+  font-size: 2.5rem;
+}
+
+/* Selecionar players */
+.container-players {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  width: 270px;
+}
+.container-player {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.container-player label {
+  font-size: 2rem;
+  text-align: center;
+  cursor: pointer;
+}
+#player-x,
+#player-circle {
+  padding: 0.5rem;
+  width: 80%;
+  font-family: var(--font-primary);
+  border-radius: 10px;
+  border-style: solid;
+  cursor: pointer;
+}
+.start-game-btn {
+  width: 80%;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  cursor: pointer;
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 1.2rem;
+  border-color: var(--color-primary);
+  border-style: solid;
+  background-color: var(--color-secundary);
+  color: var(--color-primary);
+  transition: 0.4s;
+}
+.start-game-btn:hover {
+  border-color: var(--color-secundary);
+  background-color: var(--color-primary);
+  color: var(--color-secundary);
+}
+
+/* Game */
+.game {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.situation-game {
+  font-size: 1.5rem;
+  text-align: center;
+}
+.board {
+  width: 19rem;
+  height: 19rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  background-color: var(--color-secundary);
+}
+.cells {
+  background-color: var(--color-primary);
+  width: 6rem;
+  height: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5rem;
+  font-family: var(--font-secundary);
+}
+
+/* Footer */
+.footer {
+  width: 100%;
+  min-height: 50px;
+  background-color: #000;
+  color: #f1f5f9;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  line-height: 2rem;
+}
+.footer a {
+  color: inherit;
+  text-decoration: none;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
