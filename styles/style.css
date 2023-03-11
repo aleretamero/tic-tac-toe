@@ -40,7 +40,7 @@
   background-color: var(--color-primary);
   color: var(--color-secundary);
   padding: 1rem;
-  transition: .4s;
+  transition: 0.4s;
 }
 
 /* Header */
@@ -172,7 +172,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 0.5rem;
   background-color: var(--color-secundary);
-  transition: .4s;
+  transition: 0.4s;
 }
 .cells {
   background-color: var(--color-primary);
@@ -183,7 +183,7 @@
   align-items: center;
   font-size: 5rem;
   font-family: var(--font-secundary);
-  transition: .4s;
+  transition: 0.4s;
 }
 
 /* Footer */
