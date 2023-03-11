@@ -199,7 +199,7 @@ function endGame(winner) {
   gameOver = true;
   if (winner === 'draw') {
     document.querySelector('.situation-game').innerHTML =
-    'Deu empate!!! <span id="turn-player"></span>';
+      'Deu empate!!! <span id="turn-player"></span>';
     document.getElementById('turn-player').classList.add('win');
   } else {
     document.querySelector('.situation-game').innerHTML =
