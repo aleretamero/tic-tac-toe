@@ -27,17 +27,17 @@
         </div>
       </header>
       <div class="container-main">
-        <div class="container-players">
+        <form class="container-players">
           <div class="container-player">
             <label for="player-x">X</label>
-            <input type="text" name="player-x" id="player-x" placeholder="Nome do Jogador X" autocomplete="off" />
+            <input type="text" name="player-x" id="player-x" placeholder="Nome do Jogador X" autocomplete="off" autofocus/>
           </div>
           <div class="container-player">
             <label for="player-circle">O</label>
             <input type="text" name="player-circle" id="player-circle" placeholder="Nome do Jogador O" autocomplete="off" />
           </div>
           <button class="start-game-btn">Iniciar o Jogo</button>
-        </div>
+        </form>
         <div class="game">
           <p class="situation-game"><span id="turn-player"></span></p>
           <div class="board">
