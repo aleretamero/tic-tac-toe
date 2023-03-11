@@ -15,6 +15,7 @@
 }
 .win {
   background-color: green !important;
+  padding: 0 5px;
 }
 
 /* Geral */
