@@ -31,10 +31,14 @@
   transition: 0.4s;
 }
 .container-main {
+  width: 100%;
   flex: 1 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: var(--color-primary);
+  color: var(--color-secundary);
+  padding: 1rem;
 }
 
 /* Header */
