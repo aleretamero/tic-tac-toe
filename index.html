@@ -22,41 +22,43 @@
         <h1 class="game-name">Tic-Tac-Toe</h1>
         <div class="container-btn">
           <button class="restart-game-btn">Reiniciar o Jogo</button>
-          <button class="change-name-btn">Trocar os nome</button>
+          <button class="change-name-btn">Trocar os nomes</button>
           <button class="theme-select" data-theme="dark"></button>
         </div>
       </header>
       <div class="container-main">
-        <form class="container-players">
+        <form class="container-players" autocomplete="off">
           <div class="container-player">
             <label for="player-x">X</label>
-            <input type="text" name="player-x" id="player-x" placeholder="Nome do Jogador X" autocomplete="off" autofocus/>
+            <input type="text" name="player-x" id="player-x" placeholder="Nome do Jogador X" autofocus/>
           </div>
           <div class="container-player">
             <label for="player-circle">O</label>
-            <input type="text" name="player-circle" id="player-circle" placeholder="Nome do Jogador O" autocomplete="off" />
+            <input type="text" name="player-circle" id="player-circle" placeholder="Nome do Jogador O" />
           </div>
           <button class="start-game-btn">Iniciar o Jogo</button>
         </form>
         <div class="game">
           <p class="situation-game"><span id="turn-player"></span></p>
           <div class="board">
-            <div id="cell-1" class="cells cursor-pointer" data-cell="1"></div>
-            <div id="cell-2" class="cells cursor-pointer" data-cell="2"></div>
-            <div id="cell-3" class="cells cursor-pointer" data-cell="3"></div>
-            <div id="cell-4" class="cells cursor-pointer" data-cell="4"></div>
-            <div id="cell-5" class="cells cursor-pointer" data-cell="5"></div>
-            <div id="cell-6" class="cells cursor-pointer" data-cell="6"></div>
-            <div id="cell-7" class="cells cursor-pointer" data-cell="7"></div>
-            <div id="cell-8" class="cells cursor-pointer" data-cell="8"></div>
-            <div id="cell-9" class="cells cursor-pointer" data-cell="9"></div>
+            <div id="cell-1" class="cells cursor-pointer"></div>
+            <div id="cell-2" class="cells cursor-pointer"></div>
+            <div id="cell-3" class="cells cursor-pointer"></div>
+            <div id="cell-4" class="cells cursor-pointer"></div>
+            <div id="cell-5" class="cells cursor-pointer"></div>
+            <div id="cell-6" class="cells cursor-pointer"></div>
+            <div id="cell-7" class="cells cursor-pointer"></div>
+            <div id="cell-8" class="cells cursor-pointer"></div>
+            <div id="cell-9" class="cells cursor-pointer"></div>
           </div>
         </div>
       </div>
       <footer class="footer">
         <p>
           &copy; Projeto Desenvolvido por
-          <a href="https://github.com/aleretamero" target="_blank"><strong>Alexandre Retamero</strong></a>
+          <a href="https://github.com/aleretamero" target="_blank">
+            <strong>Alexandre Retamero</strong>
+          </a>
         </p>
       </footer>
     </div>
