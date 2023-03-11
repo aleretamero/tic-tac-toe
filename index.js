@@ -4,25 +4,35 @@ let playerX = '';
 let playerCircle = '';
 let gameOver = false;
 const cells = document.querySelectorAll('.cells');
+const form = document.querySelector('.container-players');
+
+form.addEventListener('submit', function (ev) {
+  ev.preventDefault();
+  startGamePlay();
+});
 
 // Iniciar Jogo
 const buttonStartGame = document.querySelector('.start-game-btn');
-buttonStartGame.addEventListener('click', function () {
+buttonStartGame.addEventListener('click', startGamePlay);
+
+function startGamePlay() {
   playerX = document.getElementById('player-x').value;
   playerCircle = document.getElementById('player-circle').value;
   playerTurn = '';
 
-  if (playerX === '' || playerCircle === '') {
-    alert('Insira o nome dos jogadores para iniciar');
-    return;
-  } else {
-    document.querySelector('.container-players').style.display = 'none';
-    document.querySelector('.game').style.display = 'flex';
-    document.querySelector('.restart-game-btn').style.display = 'flex';
-    document.querySelector('.change-name-btn').style.display = 'flex';
-    initializeGame();
+  if (playerX === '') {
+    playerX = 'X';
   }
-});
+  if (playerCircle === '') {
+    playerCircle = 'O';
+  }
+
+  document.querySelector('.container-players').style.display = 'none';
+  document.querySelector('.game').style.display = 'flex';
+  document.querySelector('.restart-game-btn').style.display = 'flex';
+  document.querySelector('.change-name-btn').style.display = 'flex';
+  initializeGame();
+}
 
 // Reiniciar Jogo
 const buttonRestartGame = document.querySelector('.restart-game-btn');
@@ -41,32 +51,25 @@ buttonChangeName.addEventListener('click', function () {
   document.querySelector('.change-name-btn').style.display = 'none';
   playerX = '';
   playerCircle = '';
+  document.getElementById('player-x').focus();
 });
 
 function initializeGame() {
   gameOver = false;
   document.getElementById('turn-player').classList.remove('win');
-  playerTurnChange();
+  selectPlayerTurn();
   cells.forEach(function (element) {
     element.innerText = '';
     element.classList.add('cursor-pointer');
-    cells.forEach(function (el) {
-      el.classList.remove('win');
-    });
+    element.classList.remove('win');
   });
   starGame();
 }
 
-// Troca o player do turno
-function playerTurnChange() {
-  if (playerTurn === '') {
-    const random = Math.random();
-    if (random > 0.5) {
-      playerTurn = playerX;
-    } else {
-      playerTurn = playerCircle;
-    }
-  } else if (playerTurn === playerX) {
+// Seleciona o player do turno
+function selectPlayerTurn() {
+  sortedPlayer();
+  if (playerTurn === playerX) {
     playerTurn = playerCircle;
   } else if (playerTurn === playerCircle) {
     playerTurn = playerX;
@@ -75,6 +78,17 @@ function playerTurnChange() {
   document.querySelector('.situation-game').innerHTML =
     'Vez de: <span id="turn-player"></span>';
   document.getElementById('turn-player').innerText = playerTurn;
+}
+
+function sortedPlayer() {
+  if (playerTurn === '') {
+    const random = Math.random();
+    if (random > 0.5) {
+      playerTurn = playerX;
+    } else {
+      playerTurn = playerCircle;
+    }
+  }
 }
 
 function starGame() {
@@ -86,7 +100,7 @@ function starGame() {
         element.classList.remove('cursor-pointer');
         checkWin();
         if (!gameOver) {
-          playerTurnChange();
+          selectPlayerTurn();
         }
       }
     });
@@ -178,13 +192,12 @@ function checkWin() {
 
 function endGame(winner) {
   gameOver = true;
+  const msg = document.querySelector('.situation-game');
+
   if (winner === 'draw') {
-    document.querySelector('.situation-game').innerHTML =
-      'Deu empate!!! <span id="turn-player"></span>';
-    document.getElementById('turn-player').classList.add('win');
+    msg.innerHTML = 'Deu empate!!! <span id="turn-player"></span>';
   } else {
-    document.querySelector('.situation-game').innerHTML =
-      'O vencedor foi <span id="turn-player"></span>';
+    msg.innerHTML = 'O vencedor foi <span id="turn-player"></span>';
     document.getElementById('turn-player').classList.add('win');
     document.getElementById('turn-player').innerText = playerTurn;
   }
